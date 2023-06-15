@@ -2,12 +2,14 @@ from flask import Flask, render_template, request, url_for, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo import MongoClient
-
+import sys
 app = Flask(__name__)
+
+host = sys.argv[1]
 
 
 #Provide your MongoDB Container name here instead of flaskapp-db-1
-client = MongoClient("flaskapp-db-1",27017)
+client = MongoClient(host,27017)
 
 todos = client.db.todos
 

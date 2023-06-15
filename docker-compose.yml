@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    command: python -u app.py "flaskapp-db-1"
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/todo 
+    links:
+      - db
+
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
