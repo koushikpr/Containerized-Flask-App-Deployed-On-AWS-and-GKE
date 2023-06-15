@@ -1,8 +1,8 @@
 version: '3.7'
 services:
-  api:
+  apiv4:
     build: .
-    command: python -u app.py "mongodb"
+    command: python -u app.py "mongo-db"
     ports:
       - 5000:5000
     volumes:
@@ -12,6 +12,6 @@ services:
 
   db:
     image: mongo:latest
-    hostname: mongodb
+    hostname: mongo-db
     ports:
       - 27017:27017
