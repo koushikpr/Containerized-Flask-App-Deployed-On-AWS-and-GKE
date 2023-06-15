@@ -12,6 +12,7 @@ client = MongoClient("flaskapp-db-1",27017)
 todos = client.db.todos
 
 
+
 #CREATE
 @app.route('/add', methods=['POST'])
 def add_todo():
